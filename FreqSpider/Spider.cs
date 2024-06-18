@@ -102,7 +102,7 @@ namespace FreqSpider
             {
                 string directory = Path.GetDirectoryName(_filePath) ?? ".";
                 string freqFilePath = Path.Combine(directory, "freq.txt");
-                using StreamWriter sw = new(_filePath, false, System.Text.Encoding.UTF8);
+                using StreamWriter sw = new(freqFilePath, false, System.Text.Encoding.UTF8);
                 foreach (var (word, freq) in sortedWords)
                     sw.WriteLine($"{word}\t{freq}");
                 Console.WriteLine($"保存成功！统计结束。");
