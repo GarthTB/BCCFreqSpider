@@ -6,7 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Title>FreqSpider</Title>
-    <Version>0.1.1</Version>
+    <Version>0.2.0</Version>
     <Authors>Garth</Authors>
     <Copyright>©️ 2024 Garth</Copyright>
     <PackageIcon>Spider.png</PackageIcon>

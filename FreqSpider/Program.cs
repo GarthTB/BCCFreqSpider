@@ -16,11 +16,11 @@
                     throw new FileNotFoundException("未找到参数中的文件。");
 
                 if (!int.TryParse(args[1], out int concurrent) || concurrent < 1)
-                    Console.WriteLine("并发数设置无效。已使用默认值1。");
+                    Console.WriteLine("并发数参数无效。已使用默认值1。");
                 concurrent = 1;
 
                 if (!int.TryParse(args[2], out int timeout) || timeout < 1)
-                    Console.WriteLine("超时设置无效。已使用默认值30秒。");
+                    Console.WriteLine("超时参数无效。已使用默认值30秒。");
                 timeout = 30;
 
                 Console.Clear();
