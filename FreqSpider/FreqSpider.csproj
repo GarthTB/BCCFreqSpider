@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Title>FreqSpider</Title>
+    <Version>0.1.0</Version>
+    <Authors>Garth</Authors>
+    <Copyright>©️ 2024 Garth</Copyright>
+    <PackageIcon>Spider.png</PackageIcon>
+    <ApplicationIcon>Icon\favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Icon\favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Icon\Spider.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
