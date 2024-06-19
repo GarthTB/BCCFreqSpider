@@ -68,11 +68,17 @@ namespace FreqSpider
         //从页面中提取某个字词的词频
         private static int ExtractFreq(string word, string page)
         {
-            string pattern = @"totalnum"" value=""\d+";
-            Match match = Regex.Match(page, pattern);
-            if (!match.Success)
+            string wordPattern = @"input"" value=""" + word;
+            Match wordMatch = Regex.Match(page, wordPattern);
+            if (!wordMatch.Success)
+                throw new Exception($"“{word}”中有网站不支持的字符！");
+
+            string freqPattern = @"totalnum"" value=""\d+";
+            Match freqMatch = Regex.Match(page, freqPattern);
+            if (!freqMatch.Success)
                 throw new Exception($"获取“{word}”的词频失败！");
-            int freq = int.Parse(match.ValueSpan[17..]);
+            int freq = int.Parse(freqMatch.ValueSpan[17..]);
+
             Console.WriteLine($"“{word}”的词频：{freq}");
             return freq;
         }
