@@ -71,12 +71,12 @@ namespace FreqSpider
             string wordPattern = @"input"" value=""" + word;
             Match wordMatch = Regex.Match(page, wordPattern);
             if (!wordMatch.Success)
-                throw new Exception($"“{word}”中有网站不支持的字符！");
+                throw new Exception($"该词中有网站不支持的字符！");
 
             string freqPattern = @"totalnum"" value=""\d+";
             Match freqMatch = Regex.Match(page, freqPattern);
             if (!freqMatch.Success)
-                throw new Exception($"获取“{word}”的词频失败！");
+                throw new Exception("网站中没有该词的词频！");
             int freq = int.Parse(freqMatch.ValueSpan[17..]);
 
             Console.WriteLine($"“{word}”的词频：{freq}");
@@ -93,7 +93,7 @@ namespace FreqSpider
             }
             catch (Exception e)
             {
-                Console.WriteLine($"错误：{e.Message}，已令其词频为-1。");
+                Console.WriteLine($"错误：已令“{word}”的词频为-1，因为{e.Message}");
                 return -1;
             }
         }
@@ -127,7 +127,7 @@ namespace FreqSpider
             }
             catch (Exception e)
             {
-                Console.WriteLine($"统计错误：{e.Message}，已中止。");
+                Console.WriteLine($"统计错误：{e.Message}已中止。");
             }
         }
 
